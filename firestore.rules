@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSeller() {
+      return request.auth != null
+        && request.auth.token.email in ['REPLACE_WITH_SELLER_EMAIL'];
+    }
+    match /orders/{orderId} {
+      // Customers can create orders as anonymous authenticated users.
+      allow create: if request.auth != null
+        && request.resource.data.customerUid == request.auth.uid
+        && request.resource.data.status == 'Pending'
+        && request.resource.data.total is number
+        && request.resource.data.total > 0;
+      // Seller can view/update all orders. Customers can only read their own.
+      allow read: if isSeller()
+        || (request.auth != null && resource.data.customerUid == request.auth.uid);
+      allow update: if isSeller();
+      allow delete: if isSeller();
+    }
+  }
+}

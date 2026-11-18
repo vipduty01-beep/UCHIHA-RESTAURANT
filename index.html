@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uchiha Restaurant | Order Online</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">う</span><span>UCHIHA <small>COFFEE & KITCHEN</small></span></a><nav><a href="#menu">Menu</a><a href="#about">About</a><a class="seller-link" href="seller.html">Seller portal ↗</a></nav></header>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">GOOD COFFEE. GOOD FOOD. GOOD MOOD.</p><h1>Your little<br><em>daily ritual.</em></h1><p>Freshly brewed coffee, comforting bites, and a table waiting for you.</p><a class="button dark" href="#menu">Explore the menu ↓</a></div><div class="hero-art"><div class="sun"></div><div class="hero-stamp">MADE<br>FRESH<br>DAILY</div><div class="cup">☕</div></div></section>
+<main>
+<section class="section-head" id="menu"><div><p class="eyebrow">MADE WITH CARE</p><h2>Find your favorite.</h2></div><p class="muted">A little something for every moment.</p></section>
+<div id="categories" class="categories"></div><section id="menu-grid" class="menu-grid"></section>
+<section class="about" id="about"><div><p class="eyebrow">A PLACE TO PAUSE</p><h2>Stay a while.<br><em>Sip something good.</em></h2></div><p>At Uchiha Restaurant, we believe the best moments are often the simplest: a carefully made cup, a fresh bite, and time well spent.</p></section>
+</main>
+<footer><span>© <span id="year"></span> Uchiha Restaurant</span><span>Made fresh in Cambodia</span></footer>
+<button class="cart-fab" id="cart-open">Your order <b id="cart-count">0</b> · <span id="cart-total">$0.00</span></button>
+<div class="overlay" id="cart-overlay"><aside class="cart-panel"><div class="panel-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your order</h2></div><button class="icon-btn" id="cart-close">×</button></div><div id="cart-items" class="cart-items"><p class="muted">Your cart is empty. Add something delicious!</p></div><div class="checkout"><div class="total-line"><span>Total</span><strong id="checkout-total">$0.00</strong></div><form id="checkout-form"><label>Your name<input name="name" required placeholder="e.g. Alex"></label><label>Phone number<input name="phone" required placeholder="+855 ..."></label><label>Order type<select name="type"><option>Pickup</option><option>Dine-in</option><option>Delivery (confirm by phone)</option></select></label><label>Notes (optional)<textarea name="notes" rows="2" placeholder="Less sugar, no ice..."></textarea></label><button class="button dark full" type="submit">Place order · <span id="submit-total">$0.00</span></button></form><p class="tiny muted">Payment is arranged directly with the shop. Your order is sent to the seller in real time.</p></div></aside></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="customer.js"></script>
+</body></html>
