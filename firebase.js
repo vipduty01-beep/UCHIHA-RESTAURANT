@@ -7,14 +7,14 @@ import { getAuth, signInAnonymously, signInWithEmailAndPassword, signOut } from 
 import { getFirestore, collection, addDoc, doc, updateDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
-  authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_PROJECT.appspot.com",
-  messagingSenderId: "PASTE_YOUR_SENDER_ID",
-  appId: "PASTE_YOUR_APP_ID"
+  apiKey: "AIzaSyCqsMbCccK6hkloIQKvCfEGSAzBo6rXMxw",
+  authDomain: "uchiha-restaurant.firebaseapp.com",
+  projectId: "uchiha-restaurant",
+  storageBucket: "uchiha-restaurant.firebasestorage.app",
+  messagingSenderId: "967377785735",
+  appId: "1:967377785735:web:df958ae0512594570af922",
 };
-const configured = !firebaseConfig.apiKey.startsWith("PASTE_") && !firebaseConfig.projectId.startsWith("PASTE_");
+const configured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
 let app, auth, db;
 if (configured) {
   app = initializeApp(firebaseConfig); auth = getAuth(app); db = getFirestore(app);
